@@ -10,7 +10,7 @@ For visual artifacts (slides, mocks, prototypes, documents), copy `assets/` and 
 
 The essentials, to set the register on the first pass:
 
-- **Authority:** this system is the only authority. It replaces StrixMCS-Branding and StrixHome-HA; where a file disagrees, the file changes.
+- **Authority:** this system is the only authority. It replaces StrixMCS-Branding and StrixHA; where a file disagrees, the file changes.
 - **Casing:** normal case everywhere; all-capitals as styling is reserved for nothing; acronyms (MCS, IBM, HA) keep their capitals. No `text-transform: uppercase`. The motto is always *Scientia · Societas · Ascensus*. Wide tracking on short mono labels is allowed. Forbidden forms appear only struck through.
 - **Color:** field `#000000`; white for all text. Oxblood (`#4A0404` / `#6E0808`) is structure only — never words. Gold (`#BCA687`) is for the motto and formal fronts (ceremonial variants, title screens) — plus the keyboard focus ring, the one exception. No gold for states, labels, section numbers or form focus. `--state-on` and `--warn` are white. No status colors: neutral or accent with a dot. Components use tokens only.
 - **Labs exceptions:** native Labs apps may follow system appearance and typeface and use `#650F20` / `#D37181` — never on pages or marks. The `#8F3040 → #650F20` gradient is for book and cover artwork only.

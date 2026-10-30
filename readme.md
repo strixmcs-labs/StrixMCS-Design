@@ -18,7 +18,7 @@ StrixMCS Labs · Dr. Matt Booth
 **Status:** final · issued 2026-10-30
 
 **This system is the final design and branding standard for The Order of the
-Strix, StrixMCS and StrixMCS Labs.** It replaces StrixMCS-Branding and StrixHome-HA.
+Strix, StrixMCS and StrixMCS Labs.** It replaces StrixMCS-Branding and StrixHA.
 This system is the only authority: where any file disagrees with the rules
 below, the file changes.
 
