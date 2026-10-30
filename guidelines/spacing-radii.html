@@ -1,0 +1,31 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Radii & borders" subtitle="Restrained corners; hairline rules over shadow" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--bg); padding:22px 26px; font-family:var(--font-mono); }
+  .grid { display:flex; gap:20px; align-items:center; }
+  .box { width:96px; height:96px; background:var(--near); border:1px solid var(--line-2); display:flex; align-items:flex-end; justify-content:center; padding-bottom:8px; }
+  .n { font-size:10.5px; color:var(--mute); }
+  .rules { margin-left:12px; display:flex; flex-direction:column; gap:16px; flex:1; }
+  .rule { border-top:1px solid var(--line); padding-top:6px; color:var(--mute); font-size:10.5px; }
+  .rule.strong { border-top:1px solid var(--line-2); }
+  .rule.accent { border-top:3px solid var(--oxblood-hi); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="box" style="border-radius:0"><span class="n">0</span></div>
+    <div class="box" style="border-radius:3px"><span class="n">3 · sm</span></div>
+    <div class="box" style="border-radius:4px"><span class="n">4 · base</span></div>
+    <div class="box" style="border-radius:6px"><span class="n">6 · md</span></div>
+    <div class="rules">
+      <div class="rule">hairline · 1px #1C1C1C</div>
+      <div class="rule strong">rule · 1px #262626</div>
+      <div class="rule accent">accent · 3px oxblood</div>
+    </div>
+  </div>
+</body>
+</html>

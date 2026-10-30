@@ -1,0 +1,29 @@
+/* ============================================
+ *  StrixMCS · The Order of the Strix
+ *  file: tokens/effects.css
+ *  Shadow is not the vocabulary — the void is. Use rings, inner glows sparingly.
+ * ============================================ */
+
+:root {
+  /* ---- Elevation ---- (hairline rings over drop shadows; the field is black) */
+  --ring-line:   0 0 0 1px var(--line);
+  --ring-accent: 0 0 0 1px var(--oxblood-hi);
+
+  /* Depth is rare; when used it is deep and soft against black */
+  --shadow-panel: 0 1px 0 rgba(0,0,0,0.6), 0 12px 32px rgba(0,0,0,0.55);
+  --shadow-pop:   0 18px 48px rgba(0,0,0,0.7);
+
+  /* Ceremonial oxblood inner glow — reserved for the motto & ceremonial cards */
+  --glow-oxblood: inset 0 0 40px rgba(74, 4, 4, 0.18); /* @kind shadow */
+  --glow-gold:    inset 0 0 34px rgba(188, 166, 135, 0.06); /* @kind shadow */
+
+  /* ---- Motion ---- (measured; no bounce. The Order does not spring.) */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur:        180ms; /* @kind other */
+  --dur-slow:   280ms; /* @kind other */
+
+  /* ---- Focus ---- */
+  --focus-ring: 0 0 0 2px var(--black), 0 0 0 3px var(--gold);
+}

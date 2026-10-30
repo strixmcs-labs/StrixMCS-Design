@@ -1,0 +1,23 @@
+<!-- @dsCard group="Type" viewport="700x300" name="Type scale" subtitle="Mono display steps → sans body baseline" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--bg); padding:22px 26px; }
+  .row { display:flex; align-items:baseline; gap:18px; border-bottom:1px solid var(--line); padding:10px 0; }
+  .row:last-child { border-bottom:0; }
+  .spec { font-family:var(--font-mono); color:var(--white); white-space:nowrap; }
+  .tok { font-family:var(--font-mono); font-size:10.5px; color:var(--mute); margin-left:auto; white-space:nowrap; }
+  .body { font-family:var(--font-sans); color:var(--read); }
+</style>
+</head>
+<body>
+  <div class="row"><span class="spec" style="font-size:42px;font-weight:600">Display</span><span class="tok">--fs-display · 42 / 600</span></div>
+  <div class="row"><span class="spec" style="font-size:32px;font-weight:600">Heading 1</span><span class="tok">--fs-h1 · 32 / 600</span></div>
+  <div class="row"><span class="spec" style="font-size:23px;font-weight:600">Heading 2</span><span class="tok">--fs-h2 · 23 / 600</span></div>
+  <div class="row"><span class="body" style="font-size:15px">Body — running prose set in IBM Plex Sans</span><span class="tok">--fs-body · 15 / 400</span></div>
+  <div class="row"><span class="spec" style="font-size:11px;letter-spacing:0.16em;color:var(--gold)">CAPTION / LABEL</span><span class="tok">--fs-caption · 11 / mono</span></div>
+</body>
+</html>

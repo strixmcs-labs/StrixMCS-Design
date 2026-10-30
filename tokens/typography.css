@@ -1,0 +1,51 @@
+/* ============================================
+ *  StrixMCS · The Order of the Strix
+ *  file: tokens/typography.css
+ *  Mono leads. Headings carry normal case — the Order does not shout.
+ * ============================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+
+  /* Roles */
+  --font-display: var(--font-mono);   /* authority / titles / labels / wordmark / motto */
+  --font-body:    var(--font-sans);   /* running prose */
+  --font-code:    var(--font-mono);
+
+  /* ---- Weights ---- (weight & size carry hierarchy; never bold as decoration) */
+  --fw-light:    300; /* @kind font */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+
+  /* ---- Type scale ---- */
+  --fs-crest:   11px;   /* crest line / eyebrow — mono, wide tracking */
+  --fs-caption: 12px;
+  --fs-label:   13px;
+  --fs-body-sm: 14px;
+  --fs-body:    15px;   /* running prose baseline */
+  --fs-body-lg: 16px;
+  --fs-h4:      18px;
+  --fs-h3:      21px;
+  --fs-h2:      23px;
+  --fs-h1:      32px;
+  --fs-display: 42px;
+  --fs-mega:    64px;
+
+  /* ---- Line heights ---- */
+  --lh-tight:  1.15; /* @kind font */
+  --lh-snug:   1.35; /* @kind font */
+  --lh-body:   1.6; /* @kind font */
+  --lh-loose:  1.75; /* @kind font */
+
+  /* ---- Letter spacing ---- */
+  --ls-crest:   0.34em;   /* crest line */
+  --ls-eyebrow: 0.26em;   /* section numbers */
+  --ls-label:   0.16em;   /* mono labels */
+  --ls-motto:   0.22em;   /* the motto cipher */
+  --ls-tight:   0.005em;  /* display headings @kind font */
+  --ls-normal:  0; /* @kind font */
+}

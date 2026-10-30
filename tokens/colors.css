@@ -1,0 +1,66 @@
+/* ============================================
+ *  StrixMCS · The Order of the Strix
+ *  file: tokens/colors.css
+ *  Three colors, held apart. No pastels, ever.
+ * ============================================ */
+
+:root {
+  /* ---- Base palette ---- */
+  --black:        #000000;   /* the field — absolute, everywhere */
+  --near:         #0B0B0B;   /* raised panels, code, surfaces */
+  --near-2:       #121212;   /* second raised step */
+  --line:         #1C1C1C;   /* hairline rules & borders */
+  --line-2:       #262626;   /* stronger hairline */
+
+  --white:        #F7F7F7;   /* all text + display, zero warmth */
+  --white-2:      #CFCFCF;   /* secondary text */
+  --read:         #A8A8A8;   /* body copy */
+  --mute:         #6A6A6A;   /* captions, meta */
+  --faint:        #3A3A3A;   /* disabled, placeholders */
+
+  --oxblood:      #4A0404;   /* structural accent — never body text */
+  --oxblood-hi:   #6E0808;   /* lifted oxblood — borders, active edges, hover */
+  --oxblood-wash: rgba(74, 4, 4, 0.10);  /* accent field wash */
+
+  --gold:         #BCA687;   /* ceremonial accents only */
+  --gold-hi:      #CAB291;   /* lifted gold */
+  --gold-wash:    rgba(188, 166, 135, 0.08);
+
+  /* ---- Semantic aliases ---- */
+  --bg:              var(--black);
+  --bg-raised:       var(--near);
+  --bg-raised-2:     var(--near-2);
+  --surface-card:    var(--near);
+  --surface-code:    #050505;
+
+  --border:          var(--line);
+  --border-strong:   var(--line-2);
+  --border-accent:   var(--oxblood-hi);
+
+  --text-display:    var(--white);
+  --text-body:       var(--read);
+  --text-heading:    var(--white);
+  --text-secondary:  var(--white-2);
+  --text-muted:      var(--mute);
+  --text-disabled:   var(--faint);
+
+  --accent:          var(--oxblood);
+  --accent-hi:       var(--oxblood-hi);
+  --ceremonial:      var(--gold);
+  --ceremonial-hi:   var(--gold-hi);
+
+  /* ---- Status (used sparingly, in dashboards) ---- */
+  --ok:      #6E9E7E;   /* muted sage — "nominal" */
+  --warn:    var(--gold);
+  --alert:   var(--oxblood-hi);
+
+  /* ---- Labs applications (native apps only — never pages or marks) ---- */
+  --app-oxblood:      #650F20;   /* light-mode accent; 12.8:1 on white */
+  --app-wine-text:    #D37181;   /* dark-mode accent text; 4.5:1 or better */
+  --app-wine-art:     #8F3040;   /* artwork gradient start */
+  --app-art-gradient: linear-gradient(135deg, #8F3040, #650F20); /* @kind other */ /* book/cover artwork only */
+
+  /* ---- Live-state tints for dashboards (light on / off) ---- */
+  --state-on:   var(--gold);
+  --state-off:  var(--mute);
+}

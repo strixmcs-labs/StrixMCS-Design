@@ -1,0 +1,94 @@
+/* ============================================
+ *  StrixMCS · The Order of the Strix
+ *  file: tokens/fonts.css
+ *  @font-face — IBM Plex Mono + IBM Plex Sans (self-hosted)
+ *  Scientia · Societas · Ascensus
+ * ============================================ */
+
+/* ---- IBM Plex Mono — titles, labels, wordmark, motto, code ---- */
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/IBMPlexMono-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/IBMPlexMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/IBMPlexMono-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/IBMPlexMono-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/IBMPlexMono-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/IBMPlexMono-Bold.ttf") format("truetype");
+}
+
+/* ---- IBM Plex Sans — running prose ---- */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-Bold.ttf") format("truetype");
+}

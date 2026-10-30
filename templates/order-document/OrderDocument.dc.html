@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Order Document" description="A phase-gated Order document — config header, numbered sections, byline, ceremonial motto footer" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  @media print { @page { margin: 0.9in; } }
+</style>
+</helmet>
+<div style="background:#000000; min-height:100vh; padding:64px 0; font-family:var(--font-sans);">
+  <article style="max-width:760px; margin:0 auto; padding:0 40px; color:var(--read);">
+
+    <!-- Config header -->
+    <pre style="background:#050505; border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; margin:0 0 44px; overflow-x:auto;"><code style="font-family:var(--font-mono); font-size:12px; line-height:1.7; color:var(--white-2); white-space:pre; display:block;"><span style="color:var(--mute);"># ============================================
+#  <sc-if value="{{ isLabs }}" hint-placeholder-val="{{ false }}">StrixMCS Labs · The Order of the Strix</sc-if><sc-if value="{{ isOrder }}" hint-placeholder-val="{{ true }}">StrixMCS · The Order of the Strix</sc-if>
+#  <sc-if value="{{ isLabs }}" hint-placeholder-val="{{ false }}">project:    repo-name&#10;</sc-if><sc-if value="{{ isOrder }}" hint-placeholder-val="{{ true }}">instance:   StrixHome&#10;</sc-if>#  file:       document.md
+#  author:     Dr. Matt Booth &lt;matt@strixmcs.com&gt;
+#  policy:     <sc-if value="{{ isLabs }}" hint-placeholder-val="{{ false }}">published · credited&#10;</sc-if><sc-if value="{{ isOrder }}" hint-placeholder-val="{{ true }}">phase-gated · non-destructive&#10;</sc-if></span>
+<span style="color:var(--gold);">#  Scientia · Societas · Ascensus&#10;</span>
+<span style="color:var(--mute);"># ============================================</span></code></pre>
+
+    <!-- Title block -->
+    <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.26em; color:var(--gold); margin-bottom:16px;">MEMORANDUM · 001</div>
+    <h1 style="font-family:var(--font-mono); font-weight:600; font-size:34px; letter-spacing:0.005em; color:var(--white); margin:0 0 14px; line-height:1.2;">Document Title</h1>
+    <div style="font-family:var(--font-mono); font-size:12px; color:var(--white); letter-spacing:0.02em; padding-bottom:26px; border-bottom:1px solid var(--line); margin-bottom:36px;"><sc-if value="{{ isLabs }}" hint-placeholder-val="{{ false }}">StrixMCS Labs · Dr. Matt Booth</sc-if><sc-if value="{{ isOrder }}" hint-placeholder-val="{{ true }}">Dr. Matt Booth · The Order of the Strix</sc-if></div>
+
+    <!-- Section 01 -->
+    <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.26em; color:var(--gold); margin-bottom:12px;">01 — PREMISE</div>
+    <h2 style="font-family:var(--font-mono); font-weight:600; font-size:21px; color:var(--white); margin:0 0 16px; letter-spacing:0.005em;">The standard the work is held to</h2>
+    <p style="font-size:15px; line-height:1.6; color:var(--read); max-width:66ch; margin:0 0 14px;">Serious, precise, service-oriented. State the premise plainly, then the plan. Non-destructive by default — review precedes implementation. Plain verbs over jargon-for-its-own-sake.</p>
+    <p style="font-size:15px; line-height:1.6; color:var(--read); max-width:66ch; margin:0 0 28px;">Weight and size carry hierarchy; the document never reaches for bold as decoration. White is for reading; oxblood draws the structure.</p>
+
+    <!-- Callout -->
+    <div style="border:1px solid var(--oxblood-hi); border-left:3px solid var(--oxblood-hi); background:rgba(74,4,4,0.08); border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;">
+      <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em; color:var(--gold); margin-bottom:8px;">POLICY</div>
+      <div style="font-size:14px; line-height:1.55; color:var(--white-2);">Phase-gated · non-destructive. Each phase is reviewed before the next begins; nothing is deleted until its replacement is proven.</div>
+    </div>
+
+    <!-- Section 02 -->
+    <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.26em; color:var(--gold); margin-bottom:12px;">02 — METHOD</div>
+    <h2 style="font-family:var(--font-mono); font-weight:600; font-size:21px; color:var(--white); margin:0 0 16px; letter-spacing:0.005em;">How it proceeds</h2>
+    <ul style="list-style:none; margin:0 0 40px; padding:0;">
+      <li style="position:relative; padding-left:24px; margin-bottom:11px; font-size:15px; line-height:1.55; color:var(--read); max-width:64ch;"><span style="position:absolute; left:0; color:var(--oxblood-hi); font-family:var(--font-mono);">—</span>First point, stated as a plain instruction.</li>
+      <li style="position:relative; padding-left:24px; margin-bottom:11px; font-size:15px; line-height:1.55; color:var(--read); max-width:64ch;"><span style="position:absolute; left:0; color:var(--oxblood-hi); font-family:var(--font-mono);">—</span>Second point, with the reason it matters.</li>
+      <li style="position:relative; padding-left:24px; margin-bottom:11px; font-size:15px; line-height:1.55; color:var(--read); max-width:64ch;"><span style="position:absolute; left:0; color:var(--oxblood-hi); font-family:var(--font-mono);">—</span>Third point, and the condition under which it is revisited.</li>
+    </ul>
+
+    <!-- Lean footer -->
+    <footer style="border-top:1px solid var(--line); padding-top:22px; text-align:center;">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.2em; color:var(--gold-hi);">Scientia · Societas · Ascensus</div>
+      <div style="font-family:var(--font-mono); font-size:11px; color:var(--mute); margin-top:10px;"><sc-if value="{{ isLabs }}" hint-placeholder-val="{{ false }}">StrixMCS Labs · Dr. Matt Booth</sc-if><sc-if value="{{ isOrder }}" hint-placeholder-val="{{ true }}">Dr. Matt Booth · The Order of the Strix · StrixMCS</sc-if></div>
+    </footer>
+
+  </article>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;entity&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;order&quot;,&quot;labs&quot;],&quot;default&quot;:&quot;order&quot;,&quot;tsType&quot;:&quot;\&quot;order\&quot; | \&quot;labs\&quot;&quot;,&quot;section&quot;:&quot;Entity&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const e = String(this.props.entity ?? this.props.imprint ?? "order").toLowerCase();
+    const isLabs = e === "labs";
+    return { isLabs, isOrder: !isLabs };
+  }
+}
+</script>
+</body>
+</html>

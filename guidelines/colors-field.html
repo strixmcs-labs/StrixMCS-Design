@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Field & Surfaces" subtitle="Black is the field; near-black raises panels & code" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--bg); font-family:var(--font-mono); }
+  .row { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); padding:16px; }
+  .chip { background:var(--near); padding:16px 14px 14px; min-height:120px; display:flex; flex-direction:column; justify-content:flex-end; }
+  .sw { height:64px; border:1px solid var(--line); border-radius:var(--radius); margin-bottom:12px; }
+  .name { color:var(--white); font-size:12px; }
+  .hex { color:var(--mute); font-size:11px; margin-top:3px; }
+  .role { color:var(--mute); font-size:10.5px; margin-top:5px; font-family:var(--font-sans); line-height:1.4; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="chip"><div class="sw" style="background:#000000"></div><div class="name">Black</div><div class="hex">#000000</div><div class="role">The field. Absolute, everywhere.</div></div>
+    <div class="chip"><div class="sw" style="background:#0B0B0B"></div><div class="name">Near</div><div class="hex">#0B0B0B</div><div class="role">Panels, code, raised surfaces.</div></div>
+    <div class="chip"><div class="sw" style="background:#121212"></div><div class="name">Near&nbsp;2</div><div class="hex">#121212</div><div class="role">Second raised step.</div></div>
+    <div class="chip"><div class="sw" style="background:#1C1C1C"></div><div class="name">Line</div><div class="hex">#1C1C1C</div><div class="role">Hairline rules & borders.</div></div>
+  </div>
+</body>
+</html>

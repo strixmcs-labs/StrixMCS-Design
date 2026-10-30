@@ -1,0 +1,32 @@
+<!-- @dsCard group="Brand" viewport="700x290" name="The byline" subtitle="Anything authored bears a byline; the doctoral title is not dropped." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--bg); padding:26px; font-family:var(--font-mono); }
+  .title { font-size:23px; font-weight:600; color:var(--white); }
+  .by { font-size:13px; color:var(--white); margin-top:10px; }
+  .forms { margin-top:22px; display:flex; flex-wrap:wrap; gap:8px 20px; }
+  .form { font-size:11.5px; color:var(--mute); }
+  .form b { color:var(--read); font-weight:400; }
+</style>
+</head>
+<body>
+  <div class="title">Document Title</div>
+  <div class="by">Dr. Matt Booth · The Order of the Strix</div>
+  <div class="forms">
+    <div class="form"><b>Dr. Matt Booth</b> — default</div>
+    <div class="form"><b>Matt Booth, PhD</b> — email sig</div>
+    <div class="form"><b>Dr. Matthew Booth</b> — full given</div>
+    <div class="form"><b>Matthew Booth, PhD</b> — formal, full given</div>
+    <div class="form"><b>Dr. Booth</b> — brief reference</div>
+  </div>
+  <div style="margin-top:26px;padding-top:20px;border-top:1px solid var(--line)">
+    <div class="title" style="font-size:19px">repo-name</div>
+    <div class="by">StrixMCS Labs · Dr. Matt Booth</div>
+    <div class="form" style="margin-top:10px">Imprint byline — Labs work only. Never mixed with the Order byline on one artifact.</div>
+  </div>
+</body>
+</html>

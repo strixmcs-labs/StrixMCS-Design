@@ -1,0 +1,12 @@
+/* ============================================
+ *  StrixMCS · The Order of the Strix — Design System
+ *  file: styles.css  (global entry point — @import list only)
+ *  author: Dr. Matt Booth <matt@strixmcs.com>
+ *  Scientia · Societas · Ascensus
+ * ============================================ */
+
+@import "tokens/fonts.css";
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";
+@import "tokens/effects.css";

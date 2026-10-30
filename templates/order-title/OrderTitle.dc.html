@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Order Title Screen" description="The ceremonial register — seal on black, wordmark, title, and the gold motto. For covers and title slides." -->
+<helmet>
+<script src="./ds-base.js"></script>
+</helmet>
+<div style="background:#000000; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:60px; font-family:var(--font-mono);">
+  <div style="width:100%; max-width:840px; text-align:center;">
+
+    <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.34em; color:var(--gold); margin-bottom:40px;">SCIENTIA · SOCIETAS · ASCENSUS</div>
+
+    <img src="../../assets/StrixMCS-seal-512.png" alt="StrixMCS — the seal of the Order of the Strix" width="200" height="200" style="display:block; margin:0 auto 44px;" />
+
+    <div style="font-family:var(--font-mono); font-weight:600; font-size:52px; letter-spacing:0.005em; color:var(--white); line-height:1.05;">StrixMCS<sc-if value="{{ isLabs }}" hint-placeholder-val="{{ false }}"><span style="font-weight:300; color:var(--white-2); margin-left:0.2em;">Labs</span></sc-if></div>
+    <div style="font-family:var(--font-mono); font-weight:500; font-size:20px; color:var(--white-2); margin-top:18px;">The Order of the Strix</div>
+
+    <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.28em; color:var(--mute); margin-top:26px;">EDITION II · BRAND SYSTEM</div>
+
+    <!-- Ceremonial motto card -->
+    <div style="border:1px solid var(--oxblood-hi); border-radius:var(--radius); background:var(--near); box-shadow:inset 0 0 40px rgba(74,4,4,0.18); padding:22px 26px; margin:52px auto 0; max-width:460px;">
+      <div style="font-family:var(--font-mono); font-size:15px; letter-spacing:0.22em; color:var(--gold-hi);">Scientia · Societas · Ascensus</div>
+      <div style="font-family:var(--font-sans); font-size:13px; color:var(--mute); margin-top:11px;">Knowledge · Society · Ascent</div>
+    </div>
+
+    <div style="font-family:var(--font-mono); font-size:11px; color:var(--white); letter-spacing:0.02em; margin-top:44px;"><sc-if value="{{ isLabs }}" hint-placeholder-val="{{ false }}">StrixMCS Labs · Dr. Matt Booth</sc-if><sc-if value="{{ isOrder }}" hint-placeholder-val="{{ true }}">Dr. Matt Booth · The Order of the Strix</sc-if></div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;entity&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;order&quot;,&quot;labs&quot;],&quot;default&quot;:&quot;order&quot;,&quot;tsType&quot;:&quot;\&quot;order\&quot; | \&quot;labs\&quot;&quot;,&quot;section&quot;:&quot;Entity&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const isLabs = String(this.props.entity ?? "order").toLowerCase() === "labs";
+    return { isLabs, isOrder: !isLabs };
+  }
+}
+</script>
+</body>
+</html>

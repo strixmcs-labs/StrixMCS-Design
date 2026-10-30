@@ -1,0 +1,30 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Text — the white ramp" subtitle="All text is white on black, zero warmth" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--bg); font-family:var(--font-mono); padding:20px; }
+  .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .chip { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+  .sw { height:54px; }
+  .meta { padding:10px 12px; background:var(--near); }
+  .name { font-size:12px; } .hex { color:var(--mute); font-size:11px; margin-top:3px; }
+  .spec { margin-top:18px; font-family:var(--font-sans); }
+  .spec span { display:block; margin-bottom:6px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="chip"><div class="sw" style="background:#F7F7F7"></div><div class="meta"><div class="name" style="color:#F7F7F7">White</div><div class="hex">#F7F7F7 · text + display</div></div></div>
+    <div class="chip"><div class="sw" style="background:#CFCFCF"></div><div class="meta"><div class="name" style="color:#CFCFCF">White 2</div><div class="hex">#CFCFCF · secondary</div></div></div>
+    <div class="chip"><div class="sw" style="background:#A8A8A8"></div><div class="meta"><div class="name" style="color:#A8A8A8">Read</div><div class="hex">#A8A8A8 · body copy</div></div></div>
+    <div class="chip"><div class="sw" style="background:#6A6A6A"></div><div class="meta"><div class="name" style="color:#6A6A6A">Mute</div><div class="hex">#6A6A6A · captions</div></div></div>
+  </div>
+  <div class="spec">
+    <span style="color:#F7F7F7;font-size:15px">Vigilance above scholarship — white on black.</span>
+    <span style="color:#A8A8A8;font-size:14px">Running prose sits at Read; captions drop to Mute.</span>
+  </div>
+</body>
+</html>

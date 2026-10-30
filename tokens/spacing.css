@@ -1,0 +1,39 @@
+/* ============================================
+ *  StrixMCS · The Order of the Strix
+ *  file: tokens/spacing.css
+ *  A quiet 4px base grid. Generous margins; the seal sits alone.
+ * ============================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ---- Radii ---- (restrained — hairline institution, not soft SaaS) */
+  --radius-0:  0px;
+  --radius-sm: 3px;
+  --radius:    4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* ---- Borders ---- */
+  --border-hairline: 1px solid var(--line);
+  --border-rule:     1px solid var(--line-2);
+  --border-accent-l: 3px solid var(--oxblood-hi);
+
+  /* ---- Layout ---- */
+  --measure:      66ch;   /* prose measure */
+  --measure-narrow: 48ch;
+  --content-max:  900px;
+  --gutter:       32px;
+}

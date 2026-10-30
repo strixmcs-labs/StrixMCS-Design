@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x200" name="Oxblood — structure, not language" subtitle="Borders, rules, active edges — never body text" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--bg); font-family:var(--font-mono); padding:20px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr 1.4fr; gap:14px; align-items:stretch; }
+  .chip { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+  .sw { height:64px; }
+  .meta { padding:10px 12px; background:var(--near); }
+  .name { color:var(--white); font-size:12px; } .hex { color:var(--mute); font-size:11px; margin-top:3px; }
+  .demo { border:1px solid var(--oxblood-hi); border-left:3px solid var(--oxblood-hi); background:var(--oxblood-wash); border-radius:var(--radius); padding:16px 18px; }
+  .demo .t { color:var(--white); font-size:13px; } .demo .s { color:var(--read); font-size:12px; margin-top:8px; font-family:var(--font-sans); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="chip"><div class="sw" style="background:#4A0404"></div><div class="meta"><div class="name">Oxblood</div><div class="hex">#4A0404</div></div></div>
+    <div class="chip"><div class="sw" style="background:#6E0808"></div><div class="meta"><div class="name">Oxblood&nbsp;(lift)</div><div class="hex">#6E0808</div></div></div>
+    <div class="demo"><div class="t">The mark of something that matters.</div><div class="s">Oxblood draws the border, the rule, the active edge — it is never set as body copy.</div></div>
+  </div>
+</body>
+</html>
