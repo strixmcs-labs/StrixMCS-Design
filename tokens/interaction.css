@@ -1,0 +1,22 @@
+/* ============================================
+ *  StrixMCS Labs · The Order of the Strix
+ *  file: tokens/interaction.css
+ *  Shared :focus-visible ring and hover lift for every interactive component.
+ *  Hover lifts the border Line → oxblood (ceremonial → gold). It never brightens text.
+ * ============================================ */
+
+.strix-btn:focus-visible,
+.strix-switch:focus-visible,
+.strix-tag-remove:focus-visible,
+.strix-entity-tile:focus-visible,
+.strix-mode-button:focus-visible { outline: none; box-shadow: var(--focus-ring) !important; }
+.strix-input:focus-within { box-shadow: var(--focus-ring); }
+
+.strix-btn--secondary:not(:disabled):hover,
+.strix-btn--ghost:not(:disabled):hover,
+.strix-tag--removable:hover,
+.strix-switch:not(:disabled):hover,
+.strix-entity-tile:not(:disabled):hover,
+.strix-mode-button:hover { border-color: var(--oxblood-hi) !important; }
+.strix-btn--ceremonial:not(:disabled):hover,
+.strix-switch--ceremonial:not(:disabled):hover { border-color: var(--gold-hi) !important; }

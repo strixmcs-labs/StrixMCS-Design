@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../../styles.css">
 <style>
   body { margin:0; background:var(--bg); padding:26px; font-family:var(--font-sans); }
-  .lbl { font-family:var(--font-mono); font-size:10px; letter-spacing:0.18em; color:var(--mute); text-transform:uppercase; margin-bottom:12px; }
+  .lbl { font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--mute); margin-bottom:12px; }
   .block { margin-bottom:24px; }
   .col { display:flex; flex-direction:column; gap:14px; max-width:340px; }
   .fields { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -36,7 +36,7 @@
           <div className="block">
             <div className="lbl">Input</div>
             <div className="fields">
-              <Input label="House Zone" value="StrixHome" hint="Home Assistant zone" onChange={()=>{}} />
+              <Input label="House zone" value="StrixHome" hint="Home Assistant zone" onChange={()=>{}} />
               <Input label="Filter" prefix="⌕" placeholder="entity id…" onChange={()=>{}} />
             </div>
           </div>

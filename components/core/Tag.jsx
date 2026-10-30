@@ -7,7 +7,7 @@ import React from "react";
 export function Tag({ children, onRemove, mono = true, style, ...rest }) {
   return (
     <span
-      className="strix-tag"
+      className={onRemove ? "strix-tag strix-tag--removable" : "strix-tag"}
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -29,6 +29,7 @@ export function Tag({ children, onRemove, mono = true, style, ...rest }) {
       {children}
       {onRemove && (
         <button
+          className="strix-tag-remove"
           onClick={onRemove}
           aria-label="Remove"
           style={{
@@ -39,6 +40,7 @@ export function Tag({ children, onRemove, mono = true, style, ...rest }) {
             fontSize: 13,
             lineHeight: 1,
             padding: "0 1px",
+            borderRadius: "var(--radius-sm)",
           }}
         >
           ×

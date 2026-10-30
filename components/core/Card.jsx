@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * Card — a raised surface on the black field.
- * Near-black panel with a hairline ring. Ceremonial variant adds an oxblood
+ * Near-black panel with a hairline ring. Ceremonial variant takes a gold hairline and the oxblood
  * inner glow for formal registers (title screens, motto cards).
  */
 export function Card({
@@ -26,7 +26,6 @@ export function Card({
     borderRadius: "var(--radius)",
     padding: pad,
     color: "var(--read)",
-    ...(accentLeft ? { borderLeft: "3px solid var(--oxblood-hi)" } : null),
   };
 
   const variants = {
@@ -34,10 +33,9 @@ export function Card({
     raised: {
       background: "var(--near-2)",
       borderColor: "var(--line-2)",
-      boxShadow: "var(--shadow-panel)",
     },
     ceremonial: {
-      borderColor: "var(--oxblood-hi)",
+      borderColor: "var(--gold)",
       boxShadow: "var(--glow-oxblood)",
     },
     code: {
@@ -51,7 +49,7 @@ export function Card({
   return (
     <div
       className={`strix-card strix-card--${variant}`}
-      style={{ ...base, ...variants[variant], ...style }}
+      style={{ ...base, ...variants[variant], ...(accentLeft ? { borderLeft: "3px solid var(--oxblood-hi)" } : null), ...style }}
       {...rest}
     >
       {children}

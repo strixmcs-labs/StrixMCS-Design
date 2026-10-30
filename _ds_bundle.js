@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"StrixMCSOrderDesignSystem_72a56f","components":[{"name":"Byline","sourcePath":"components/brand/Byline.jsx"},{"name":"Motto","sourcePath":"components/brand/Motto.jsx"},{"name":"Seal","sourcePath":"components/brand/Seal.jsx"},{"name":"SectionHeader","sourcePath":"components/brand/SectionHeader.jsx"},{"name":"Wordmark","sourcePath":"components/brand/Wordmark.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"EntityTile","sourcePath":"components/dashboard/EntityTile.jsx"},{"name":"ModeButton","sourcePath":"components/dashboard/ModeButton.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"}],"sourceHashes":{"components/brand/Byline.jsx":"49d585986055","components/brand/Motto.jsx":"fb6ee7aa79ea","components/brand/Seal.jsx":"ab6db6e4e0f5","components/brand/SectionHeader.jsx":"4bfef864d2c5","components/brand/Wordmark.jsx":"41743f3f2d03","components/core/Badge.jsx":"9d5684081f17","components/core/Button.jsx":"af8a7865cb4e","components/core/Card.jsx":"d609b8b527a5","components/core/Tag.jsx":"64673ba40dbc","components/dashboard/EntityTile.jsx":"630cfcd927d0","components/dashboard/ModeButton.jsx":"5dadc876e385","components/forms/Input.jsx":"286094970df1","components/forms/Switch.jsx":"3b18837284af"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"StrixMCSOrderDesignSystem_72a56f","components":[{"name":"Byline","sourcePath":"components/brand/Byline.jsx"},{"name":"Motto","sourcePath":"components/brand/Motto.jsx"},{"name":"Seal","sourcePath":"components/brand/Seal.jsx"},{"name":"SectionHeader","sourcePath":"components/brand/SectionHeader.jsx"},{"name":"Wordmark","sourcePath":"components/brand/Wordmark.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"EntityTile","sourcePath":"components/dashboard/EntityTile.jsx"},{"name":"ModeButton","sourcePath":"components/dashboard/ModeButton.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"}],"sourceHashes":{"components/brand/Byline.jsx":"2173fe272f2c","components/brand/Motto.jsx":"fb6ee7aa79ea","components/brand/Seal.jsx":"7da19b8978b4","components/brand/SectionHeader.jsx":"e2c1cc08ad8c","components/brand/Wordmark.jsx":"19cd7bd9914e","components/core/Badge.jsx":"76ecc4c1e7cf","components/core/Button.jsx":"b83ae47633a2","components/core/Card.jsx":"d9bc8914e446","components/core/Tag.jsx":"3536712e5bca","components/dashboard/EntityTile.jsx":"9f799ecc3dbe","components/dashboard/ModeButton.jsx":"8c25c786acf4","components/forms/Input.jsx":"0102471e11c6","components/forms/Switch.jsx":"5dc7f59a43fd"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -14,23 +14,24 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 /**
  * Byline — the author attribution. Mono, white, beneath a title or at a document foot.
  * The doctoral title is part of the attribution and is not dropped.
- * `entity="labs"` sets the Labs byline: "StrixMCS Labs · Dr. Matt Booth". The two bylines are never mixed.
- * `imprint` is kept as a deprecated alias for `entity="labs"`.
+ * House byline (default): "Dr. Matt Booth · The Order of the Strix".
+ * `entity="labs"`: "StrixMCS Labs · Dr. Matt Booth". The two bylines are never mixed.
+ * `entity="order"` and `imprint` are deprecated aliases.
  */
 function Byline({
   form = "Dr. Matt Booth",
   order = true,
   instance,
   align = "left",
-  entity = "order",
+  entity = "house",
   imprint = false,
   style,
   ...rest
 }) {
   const isLabs = imprint || entity === "labs";
   const parts = isLabs ? ["StrixMCS Labs", form] : [form];
-  if (order && !isLabs) parts.push("The Order of the Strix");
   if (instance) parts.push(instance);
+  if (order && !isLabs) parts.push("The Order of the Strix");
   return /*#__PURE__*/React.createElement("div", _extends({
     className: "strix-byline",
     style: {
@@ -123,7 +124,7 @@ function Seal({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      background: "#000000",
+      background: "var(--black)",
       padding: margin
     }
   }, rest), /*#__PURE__*/React.createElement("img", {
@@ -146,7 +147,7 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
  * SectionHeader — a numbered section opener in the guidelines register.
- * Gold section number over a white mono title, optional sans lede, hairline rule.
+ * Mute section number over a white mono title, optional sans lede, hairline rule.
  */
 function SectionHeader({
   number,
@@ -168,7 +169,7 @@ function SectionHeader({
       fontFamily: "var(--font-mono)",
       fontSize: 11,
       letterSpacing: "0.26em",
-      color: "var(--gold)",
+      color: "var(--mute)",
       marginBottom: 14
     }
   }, number), /*#__PURE__*/React.createElement("h2", {
@@ -200,14 +201,14 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 /**
  * Wordmark — StrixMCS, set correctly and immutably.
  * Capital S, lowercase, MCS in capitals. Mono, normal case, never restyled.
- * `entity="labs"` sets the StrixMCS Labs imprint lockup: Labs in Plex Mono Light 300,
- * #CFCFCF, with the word space tightened to about a third of a mono space.
- * `labs` is kept as a deprecated alias for `entity="labs"`.
+ * `entity="house"` (default) sets StrixMCS; `entity="labs"` sets the StrixMCS Labs lockup:
+ * Labs in Plex Mono Light 300, var(--white-2), word space tightened to about a third of a mono space.
+ * `entity="order"` and `labs` are deprecated aliases.
  */
 function Wordmark({
   size = 32,
   tagline = false,
-  entity = "order",
+  entity = "house",
   labs = false,
   color = "var(--white)",
   ...rest
@@ -239,9 +240,8 @@ function Wordmark({
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: Math.max(10, Math.round(size * 0.28)),
-      letterSpacing: "0.28em",
-      color: "var(--mute)",
-      textTransform: "uppercase"
+      letterSpacing: "0.12em",
+      color: "var(--mute)"
     }
   }, "The Order of the Strix"));
 }
@@ -252,8 +252,8 @@ Object.assign(__ds_scope, { Wordmark });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
- * Badge — a small status marker. Mono, uppercase-tracked.
- * Tones map to the disciplined palette; oxblood/gold reserved for structure & ceremony.
+ * Badge — a small status marker. Mono, normal case, lightly tracked.
+ * No status colors: status is neutral or accent with a dot. Gold (ceremonial) is for formal fronts only.
  */
 function Badge({
   children,
@@ -281,12 +281,6 @@ function Badge({
       bg: "var(--gold-wash)",
       dot: "var(--gold)"
     },
-    ok: {
-      color: "#9BC4A9",
-      border: "#3B5A47",
-      bg: "rgba(110,158,126,0.10)",
-      dot: "var(--ok)"
-    },
     mute: {
       color: "var(--mute)",
       border: "var(--line)",
@@ -304,8 +298,7 @@ function Badge({
       fontFamily: "var(--font-mono)",
       fontSize: 10.5,
       fontWeight: 500,
-      letterSpacing: "0.12em",
-      textTransform: "uppercase",
+      letterSpacing: "0.06em",
       padding: "4px 9px",
       borderRadius: "var(--radius-sm)",
       border: `1px solid ${t.border}`,
@@ -335,6 +328,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
  * Button — the Order's action control.
  * Three registers: primary (oxblood structure), secondary (hairline), ghost (bare).
  * A ceremonial variant is reserved for formal moments (gold hairline).
+ * Hover lifts the border to oxblood (ceremonial → gold); focus shows the shared gold ring.
  */
 function Button({
   children,
@@ -421,7 +415,7 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
  * Card — a raised surface on the black field.
- * Near-black panel with a hairline ring. Ceremonial variant adds an oxblood
+ * Near-black panel with a hairline ring. Ceremonial variant takes a gold hairline and the oxblood
  * inner glow for formal registers (title screens, motto cards).
  */
 function Card({
@@ -443,20 +437,16 @@ function Card({
     border: "1px solid var(--line)",
     borderRadius: "var(--radius)",
     padding: pad,
-    color: "var(--read)",
-    ...(accentLeft ? {
-      borderLeft: "3px solid var(--oxblood-hi)"
-    } : null)
+    color: "var(--read)"
   };
   const variants = {
     default: {},
     raised: {
       background: "var(--near-2)",
-      borderColor: "var(--line-2)",
-      boxShadow: "var(--shadow-panel)"
+      borderColor: "var(--line-2)"
     },
     ceremonial: {
-      borderColor: "var(--oxblood-hi)",
+      borderColor: "var(--gold)",
       boxShadow: "var(--glow-oxblood)"
     },
     code: {
@@ -471,6 +461,9 @@ function Card({
     style: {
       ...base,
       ...variants[variant],
+      ...(accentLeft ? {
+        borderLeft: "3px solid var(--oxblood-hi)"
+      } : null),
       ...style
     }
   }, rest), children);
@@ -493,7 +486,7 @@ function Tag({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("span", _extends({
-    className: "strix-tag",
+    className: onRemove ? "strix-tag strix-tag--removable" : "strix-tag",
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -511,6 +504,7 @@ function Tag({
       ...style
     }
   }, rest), children, onRemove && /*#__PURE__*/React.createElement("button", {
+    className: "strix-tag-remove",
     onClick: onRemove,
     "aria-label": "Remove",
     style: {
@@ -520,7 +514,8 @@ function Tag({
       fontFamily: "var(--font-mono)",
       fontSize: 13,
       lineHeight: 1,
-      padding: "0 1px"
+      padding: "0 1px",
+      borderRadius: "var(--radius-sm)"
     }
   }, "\xD7"));
 }
@@ -532,7 +527,7 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
  * EntityTile — a StrixHome dashboard tile for a light, switch, or sensor.
- * Tap to toggle. Off reads muted; on lifts to gold (the live-state tint).
+ * Tap to toggle. Off reads muted; on lifts to white (--state-on).
  * `icon` is any node (an <img>, an icon-font <i>, or a glyph).
  */
 function EntityTile({
@@ -545,7 +540,7 @@ function EntityTile({
   ...rest
 }) {
   const active = on && !unavailable;
-  const tint = unavailable ? "var(--faint)" : active ? "var(--gold)" : "var(--mute)";
+  const tint = unavailable ? "var(--faint)" : active ? "var(--state-on)" : "var(--mute)";
   return /*#__PURE__*/React.createElement("button", _extends({
     className: "strix-entity-tile",
     onClick: unavailable ? undefined : onToggle,
@@ -557,8 +552,8 @@ function EntityTile({
       gap: 14,
       padding: "16px 16px 14px",
       minWidth: 132,
-      background: active ? "rgba(188,166,135,0.06)" : "var(--near)",
-      border: `1px solid ${active ? "rgba(188,166,135,0.28)" : "var(--line-2)"}`,
+      background: active ? "var(--near-2)" : "var(--near)",
+      border: `1px solid ${active ? "var(--mute)" : "var(--line-2)"}`,
       borderRadius: "var(--radius-md)",
       cursor: unavailable ? "not-allowed" : "pointer",
       opacity: unavailable ? 0.55 : 1,
@@ -568,11 +563,11 @@ function EntityTile({
     style: {
       width: 38,
       height: 38,
-      borderRadius: "50%",
+      borderRadius: "var(--radius)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      background: active ? "rgba(188,166,135,0.12)" : "var(--near-2)",
+      background: active ? "var(--line-2)" : "var(--near-2)",
       color: tint,
       fontSize: 18,
       lineHeight: 1
@@ -594,9 +589,8 @@ function EntityTile({
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 11,
-      letterSpacing: "0.06em",
-      color: tint,
-      textTransform: "uppercase"
+      letterSpacing: "0.04em",
+      color: tint
     }
   }, unavailable ? "unavailable" : state)));
 }
@@ -643,14 +637,13 @@ function ModeButton({
     style: {
       fontSize: 18,
       lineHeight: 1,
-      color: active ? "var(--gold-hi)" : "var(--mute)"
+      color: active ? "var(--state-on)" : "var(--mute)"
     }
   }, icon), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 12,
-      letterSpacing: "0.08em",
-      textTransform: "uppercase"
+      letterSpacing: "0.04em"
     }
   }, mode));
 }
@@ -662,7 +655,7 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
  * Input — a mono text field for config values and search.
- * Hairline on the black field; focus lifts the border to gold.
+ * Hairline on the black field; focus lifts the border to oxblood and shows the shared gold ring.
  */
 function Input({
   label,
@@ -690,17 +683,17 @@ function Input({
     style: {
       fontFamily: "var(--font-mono)",
       fontSize: 11,
-      letterSpacing: "0.12em",
-      textTransform: "uppercase",
+      letterSpacing: "0.06em",
       color: "var(--mute)"
     }
   }, label), /*#__PURE__*/React.createElement("div", {
+    className: "strix-input",
     style: {
       display: "flex",
       alignItems: "center",
       gap: 8,
       background: "var(--near)",
-      border: `1px solid ${focused ? "var(--gold)" : "var(--line-2)"}`,
+      border: `1px solid ${focused ? "var(--oxblood-hi)" : "var(--line-2)"}`,
       borderRadius: "var(--radius)",
       padding: "0 12px",
       opacity: disabled ? 0.5 : 1,
@@ -758,6 +751,7 @@ function Switch({
 }) {
   const onColor = tone === "ceremonial" ? "var(--gold)" : "var(--oxblood-hi)";
   const control = /*#__PURE__*/React.createElement("button", _extends({
+    className: tone === "ceremonial" ? "strix-switch strix-switch--ceremonial" : "strix-switch",
     role: "switch",
     "aria-checked": checked,
     disabled: disabled,

@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * Input — a mono text field for config values and search.
- * Hairline on the black field; focus lifts the border to gold.
+ * Hairline on the black field; focus lifts the border to oxblood and shows the shared gold ring.
  */
 export function Input({
   label,
@@ -27,8 +27,7 @@ export function Input({
           style={{
             fontFamily: "var(--font-mono)",
             fontSize: 11,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
+            letterSpacing: "0.06em",
             color: "var(--mute)",
           }}
         >
@@ -36,12 +35,13 @@ export function Input({
         </label>
       )}
       <div
+        className="strix-input"
         style={{
           display: "flex",
           alignItems: "center",
           gap: 8,
           background: "var(--near)",
-          border: `1px solid ${focused ? "var(--gold)" : "var(--line-2)"}`,
+          border: `1px solid ${focused ? "var(--oxblood-hi)" : "var(--line-2)"}`,
           borderRadius: "var(--radius)",
           padding: "0 12px",
           opacity: disabled ? 0.5 : 1,

@@ -6,8 +6,8 @@ export interface WordmarkProps {
   size?: number;
   /** Show "The Order of the Strix" tagline beneath. */
   tagline?: boolean;
-  /** Which entity: "order" (StrixMCS, default) or "labs" (StrixMCS Labs lockup — Labs in Light 300, #CFCFCF; suppresses the tagline). */
-  entity?: "order" | "labs";
+  /** Which entity: "house" (StrixMCS, default) or "labs" (StrixMCS Labs lockup — Labs in Light 300; suppresses the tagline). "order" is a deprecated alias for "house". */
+  entity?: "house" | "labs" | "order";
   /** @deprecated Use entity="labs". */
   labs?: boolean;
   /** Override color (stay within the palette). Default white. */

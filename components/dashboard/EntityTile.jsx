@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * EntityTile — a StrixHome dashboard tile for a light, switch, or sensor.
- * Tap to toggle. Off reads muted; on lifts to gold (the live-state tint).
+ * Tap to toggle. Off reads muted; on lifts to white (--state-on).
  * `icon` is any node (an <img>, an icon-font <i>, or a glyph).
  */
 export function EntityTile({
@@ -15,7 +15,7 @@ export function EntityTile({
   ...rest
 }) {
   const active = on && !unavailable;
-  const tint = unavailable ? "var(--faint)" : active ? "var(--gold)" : "var(--mute)";
+  const tint = unavailable ? "var(--faint)" : active ? "var(--state-on)" : "var(--mute)";
 
   return (
     <button
@@ -29,8 +29,8 @@ export function EntityTile({
         gap: 14,
         padding: "16px 16px 14px",
         minWidth: 132,
-        background: active ? "rgba(188,166,135,0.06)" : "var(--near)",
-        border: `1px solid ${active ? "rgba(188,166,135,0.28)" : "var(--line-2)"}`,
+        background: active ? "var(--near-2)" : "var(--near)",
+        border: `1px solid ${active ? "var(--mute)" : "var(--line-2)"}`,
         borderRadius: "var(--radius-md)",
         cursor: unavailable ? "not-allowed" : "pointer",
         opacity: unavailable ? 0.55 : 1,
@@ -42,11 +42,11 @@ export function EntityTile({
         style={{
           width: 38,
           height: 38,
-          borderRadius: "50%",
+          borderRadius: "var(--radius)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: active ? "rgba(188,166,135,0.12)" : "var(--near-2)",
+          background: active ? "var(--line-2)" : "var(--near-2)",
           color: tint,
           fontSize: 18,
           lineHeight: 1,
@@ -69,9 +69,8 @@ export function EntityTile({
           style={{
             fontFamily: "var(--font-mono)",
             fontSize: 11,
-            letterSpacing: "0.06em",
+            letterSpacing: "0.04em",
             color: tint,
-            textTransform: "uppercase",
           }}
         >
           {unavailable ? "unavailable" : state}

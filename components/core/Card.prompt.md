@@ -8,5 +8,5 @@ A raised near-black surface on the black field, ringed by a hairline. The defaul
 <Card variant="code">$ ha core restart</Card>
 ```
 
-- **variant**: `default`, `raised` (elevated), `ceremonial` (oxblood inner glow — formal only), `code` (terminal surface, mono).
+- **variant**: `default`, `raised` (second surface step, stronger hairline — no shadow; shadows are for overlays only), `ceremonial` (gold hairline + oxblood inner glow — formal only), `code` (terminal surface, mono).
 - **accentLeft**: adds a 3px oxblood left rule. **padding**: `none`/`sm`/`md`/`lg`.

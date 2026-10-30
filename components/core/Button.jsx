@@ -4,6 +4,7 @@ import React from "react";
  * Button — the Order's action control.
  * Three registers: primary (oxblood structure), secondary (hairline), ghost (bare).
  * A ceremonial variant is reserved for formal moments (gold hairline).
+ * Hover lifts the border to oxblood (ceremonial → gold); focus shows the shared gold ring.
  */
 export function Button({
   children,

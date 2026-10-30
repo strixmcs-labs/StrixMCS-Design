@@ -5,7 +5,7 @@ import * as React from "react";
  */
 export interface CardProps {
   children: React.ReactNode;
-  /** default (hairline panel), raised (elevated + shadow), ceremonial (oxblood glow), code (terminal surface). */
+  /** default (hairline panel), raised (second surface step + stronger hairline; no shadow), ceremonial (gold hairline + oxblood inner glow — formal only), code (terminal surface). */
   variant?: "default" | "raised" | "ceremonial" | "code";
   /** Default "md". */
   padding?: "none" | "sm" | "md" | "lg";

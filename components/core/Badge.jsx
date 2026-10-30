@@ -1,15 +1,14 @@
 import React from "react";
 
 /**
- * Badge — a small status marker. Mono, uppercase-tracked.
- * Tones map to the disciplined palette; oxblood/gold reserved for structure & ceremony.
+ * Badge — a small status marker. Mono, normal case, lightly tracked.
+ * No status colors: status is neutral or accent with a dot. Gold (ceremonial) is for formal fronts only.
  */
 export function Badge({ children, tone = "neutral", dot = false, style, ...rest }) {
   const tones = {
     neutral: { color: "var(--white-2)", border: "var(--line-2)", bg: "var(--near-2)", dot: "var(--mute)" },
     accent: { color: "var(--white)", border: "var(--oxblood-hi)", bg: "var(--oxblood-wash)", dot: "var(--oxblood-hi)" },
     ceremonial: { color: "var(--gold-hi)", border: "var(--gold)", bg: "var(--gold-wash)", dot: "var(--gold)" },
-    ok: { color: "#9BC4A9", border: "#3B5A47", bg: "rgba(110,158,126,0.10)", dot: "var(--ok)" },
     mute: { color: "var(--mute)", border: "var(--line)", bg: "transparent", dot: "var(--mute)" },
   };
   const t = tones[tone] || tones.neutral;
@@ -24,8 +23,7 @@ export function Badge({ children, tone = "neutral", dot = false, style, ...rest 
         fontFamily: "var(--font-mono)",
         fontSize: 10.5,
         fontWeight: 500,
-        letterSpacing: "0.12em",
-        textTransform: "uppercase",
+        letterSpacing: "0.06em",
         padding: "4px 9px",
         borderRadius: "var(--radius-sm)",
         border: `1px solid ${t.border}`,

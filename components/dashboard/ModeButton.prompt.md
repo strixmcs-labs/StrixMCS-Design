@@ -7,4 +7,4 @@ A house-mode selector button (Day / Bedtime / Night / Away). The active mode car
 <ModeButton mode="Night" onSelect={() => set("Night")} />
 ```
 
-- **active**: the current mode. **icon**: glyph above the label (gold when active).
+- **active**: the current mode. **icon**: glyph above the label (white when active).

@@ -7,7 +7,7 @@
 <style>
   body { margin:0; background:var(--bg); padding:26px; font-family:var(--font-sans); }
   .block { margin-bottom:24px; }
-  .lbl { font-family:var(--font-mono); font-size:10px; letter-spacing:0.18em; color:var(--mute); text-transform:uppercase; margin-bottom:12px; }
+  .lbl { font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--mute); margin-bottom:12px; }
   .row { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
   .cards { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 </style>
@@ -26,10 +26,10 @@
           <div className="block">
             <div className="lbl">Button</div>
             <div className="row">
-              <Button variant="primary">Apply Mode</Button>
+              <Button variant="primary">Apply mode</Button>
               <Button variant="secondary">Cancel</Button>
               <Button variant="ghost">Dismiss</Button>
-              <Button variant="ceremonial">Issue Document</Button>
+              <Button variant="ceremonial">Issue document</Button>
               <Button variant="secondary" size="sm">Small</Button>
               <Button variant="primary" disabled>Disabled</Button>
             </div>
@@ -38,7 +38,7 @@
             <div className="lbl">Badge &amp; Tag</div>
             <div className="row">
               <Badge tone="accent" dot>Night</Badge>
-              <Badge tone="ok" dot>Nominal</Badge>
+              <Badge tone="neutral" dot>Nominal</Badge>
               <Badge tone="ceremonial">Edition II</Badge>
               <Badge tone="neutral">Day</Badge>
               <Tag>light.living_room_lights</Tag>

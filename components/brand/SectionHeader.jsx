@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * SectionHeader — a numbered section opener in the guidelines register.
- * Gold section number over a white mono title, optional sans lede, hairline rule.
+ * Mute section number over a white mono title, optional sans lede, hairline rule.
  */
 export function SectionHeader({ number, title, lede, rule = true, style, ...rest }) {
   return (
@@ -21,7 +21,7 @@ export function SectionHeader({ number, title, lede, rule = true, style, ...rest
             fontFamily: "var(--font-mono)",
             fontSize: 11,
             letterSpacing: "0.26em",
-            color: "var(--gold)",
+            color: "var(--mute)",
             marginBottom: 14,
           }}
         >

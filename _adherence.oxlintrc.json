@@ -45,8 +45,8 @@
         "message": "<Badge> doesn't accept that prop. Declared props: children, tone, dot."
       },
       {
-        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:neutral|accent|ceremonial|ok|mute)$/]",
-        "message": "<Badge> tone must be one of 'neutral' | 'accent' | 'ceremonial' | 'ok' | 'mute'."
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:neutral|accent|ceremonial|mute)$/]",
+        "message": "<Badge> tone must be one of 'neutral' | 'accent' | 'ceremonial' | 'mute'."
       },
       {
         "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|size|disabled|full|as|onClick|key|ref|className|style|children)$/]",
@@ -69,12 +69,12 @@
         "message": "<Byline> doesn't accept that prop. Declared props: form, order, instance, entity, imprint, align."
       },
       {
-        "selector": "JSXOpeningElement[name.name='Byline'] > JSXAttribute[name.name='form'] > Literal[value!=/^(?:Dr\\. Matt Booth|Matt Booth, PhD|Dr\\. Matthew Booth|Matthew Booth, PhD|Dr\\. Booth)$/]",
-        "message": "<Byline> form must be one of 'Dr. Matt Booth' | 'Matt Booth, PhD' | 'Dr. Matthew Booth' | 'Matthew Booth, PhD' | 'Dr. Booth'."
+        "selector": "JSXOpeningElement[name.name='Byline'] > JSXAttribute[name.name='form'] > Literal[value!=/^(?:Dr\\. Matt Booth)$/]",
+        "message": "<Byline> form must be one of 'Dr. Matt Booth'."
       },
       {
-        "selector": "JSXOpeningElement[name.name='Byline'] > JSXAttribute[name.name='entity'] > Literal[value!=/^(?:order|labs)$/]",
-        "message": "<Byline> entity must be one of 'order' | 'labs'."
+        "selector": "JSXOpeningElement[name.name='Byline'] > JSXAttribute[name.name='entity'] > Literal[value!=/^(?:house|labs|order)$/]",
+        "message": "<Byline> entity must be one of 'house' | 'labs' | 'order'."
       },
       {
         "selector": "JSXOpeningElement[name.name='Byline'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center|right)$/]",
@@ -137,8 +137,8 @@
         "message": "<Wordmark> doesn't accept that prop. Declared props: size, tagline, entity, labs, color."
       },
       {
-        "selector": "JSXOpeningElement[name.name='Wordmark'] > JSXAttribute[name.name='entity'] > Literal[value!=/^(?:order|labs)$/]",
-        "message": "<Wordmark> entity must be one of 'order' | 'labs'."
+        "selector": "JSXOpeningElement[name.name='Wordmark'] > JSXAttribute[name.name='entity'] > Literal[value!=/^(?:house|labs|order)$/]",
+        "message": "<Wordmark> entity must be one of 'house' | 'labs' | 'order'."
       }
     ]
   },
@@ -198,10 +198,6 @@
       "--accent",
       "--accent-hi",
       "--alert",
-      "--app-art-gradient",
-      "--app-oxblood",
-      "--app-wine-art",
-      "--app-wine-text",
       "--bg",
       "--bg-raised",
       "--bg-raised-2",
@@ -250,6 +246,10 @@
       "--gold-hi",
       "--gold-wash",
       "--gutter",
+      "--labs-art-gradient",
+      "--labs-oxblood",
+      "--labs-wine-art",
+      "--labs-wine-text",
       "--lh-body",
       "--lh-loose",
       "--lh-snug",
@@ -267,13 +267,11 @@
       "--mute",
       "--near",
       "--near-2",
-      "--ok",
       "--oxblood",
       "--oxblood-hi",
       "--oxblood-wash",
       "--radius",
       "--radius-0",
-      "--radius-lg",
       "--radius-md",
       "--radius-sm",
       "--read",
@@ -342,13 +340,12 @@
       "--accent-hi": "color",
       "--ceremonial": "color",
       "--ceremonial-hi": "color",
-      "--ok": "color",
       "--warn": "color",
       "--alert": "color",
-      "--app-oxblood": "color",
-      "--app-wine-text": "font",
-      "--app-wine-art": "color",
-      "--app-art-gradient": "other",
+      "--labs-oxblood": "color",
+      "--labs-wine-text": "font",
+      "--labs-wine-art": "color",
+      "--labs-art-gradient": "other",
       "--state-on": "color",
       "--state-off": "color",
       "--font-mono": "font",
@@ -399,7 +396,6 @@
       "--radius-sm": "radius",
       "--radius": "radius",
       "--radius-md": "radius",
-      "--radius-lg": "radius",
       "--border-hairline": "color",
       "--border-rule": "color",
       "--border-accent-l": "color",

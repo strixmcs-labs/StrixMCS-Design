@@ -1,6 +1,6 @@
 import * as React from "react";
 
-/** A numbered section opener — gold number, mono title, optional lede, hairline rule. */
+/** A numbered section opener — mute number, mono title, optional lede, hairline rule. */
 export interface SectionHeaderProps {
   /** Section number/eyebrow, e.g. "00 — Premise". */
   number?: string;

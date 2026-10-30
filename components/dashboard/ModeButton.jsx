@@ -31,7 +31,7 @@ export function ModeButton({ mode, active = false, icon, onSelect, ...rest }) {
       {...rest}
     >
       {icon && (
-        <span style={{ fontSize: 18, lineHeight: 1, color: active ? "var(--gold-hi)" : "var(--mute)" }}>
+        <span style={{ fontSize: 18, lineHeight: 1, color: active ? "var(--state-on)" : "var(--mute)" }}>
           {icon}
         </span>
       )}
@@ -39,8 +39,7 @@ export function ModeButton({ mode, active = false, icon, onSelect, ...rest }) {
         style={{
           fontFamily: "var(--font-mono)",
           fontSize: 12,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
+          letterSpacing: "0.04em",
         }}
       >
         {mode}

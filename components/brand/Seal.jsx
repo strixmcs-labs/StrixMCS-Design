@@ -21,7 +21,7 @@ export function Seal({
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "#000000",
+        background: "var(--black)",
         padding: margin,
       }}
       {...rest}

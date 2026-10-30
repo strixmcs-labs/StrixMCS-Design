@@ -1,5 +1,5 @@
 /* ============================================
- *  StrixMCS · The Order of the Strix
+ *  StrixMCS Labs · The Order of the Strix
  *  file: tokens/spacing.css
  *  A quiet 4px base grid. Generous margins; the seal sits alone.
  * ============================================ */
@@ -24,7 +24,6 @@
   --radius-sm: 3px;
   --radius:    4px;
   --radius-md: 6px;
-  --radius-lg: 8px;
 
   /* ---- Borders ---- */
   --border-hairline: 1px solid var(--line);

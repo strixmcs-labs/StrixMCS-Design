@@ -15,6 +15,7 @@ export function Switch({
   const onColor = tone === "ceremonial" ? "var(--gold)" : "var(--oxblood-hi)";
   const control = (
     <button
+      className={tone === "ceremonial" ? "strix-switch strix-switch--ceremonial" : "strix-switch"}
       role="switch"
       aria-checked={checked}
       disabled={disabled}

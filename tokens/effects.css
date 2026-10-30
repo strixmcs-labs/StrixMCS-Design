@@ -1,5 +1,5 @@
 /* ============================================
- *  StrixMCS · The Order of the Strix
+ *  StrixMCS Labs · The Order of the Strix
  *  file: tokens/effects.css
  *  Shadow is not the vocabulary — the void is. Use rings, inner glows sparingly.
  * ============================================ */
@@ -9,7 +9,7 @@
   --ring-line:   0 0 0 1px var(--line);
   --ring-accent: 0 0 0 1px var(--oxblood-hi);
 
-  /* Depth is rare; when used it is deep and soft against black */
+  /* Shadows are for overlays only — never cards or panels */
   --shadow-panel: 0 1px 0 rgba(0,0,0,0.6), 0 12px 32px rgba(0,0,0,0.55);
   --shadow-pop:   0 18px 48px rgba(0,0,0,0.7);
 
@@ -25,5 +25,5 @@
   --dur-slow:   280ms; /* @kind other */
 
   /* ---- Focus ---- */
-  --focus-ring: 0 0 0 2px var(--black), 0 0 0 3px var(--gold);
+  --focus-ring: 0 0 0 2px var(--black), 0 0 0 3px var(--gold); /* the one gold exception */
 }

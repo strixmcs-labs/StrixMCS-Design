@@ -1,6 +1,6 @@
 # Input
 
-A mono text field for config values and search. Hairline on the black field; focus lifts the border to gold.
+A mono text field for config values and search. Hairline on the black field; focus lifts the border to oxblood and shows the shared gold focus ring. Labels are normal case.
 
 ```jsx
 <Input label="House Zone" value={zone} onChange={e => setZone(e.target.value)} hint="Home Assistant zone name" />

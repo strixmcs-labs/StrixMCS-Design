@@ -7,7 +7,7 @@
 <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js"></script>
 <style>
   body { margin:0; background:var(--bg); padding:26px; font-family:var(--font-sans); }
-  .lbl { font-family:var(--font-mono); font-size:10px; letter-spacing:0.18em; color:var(--mute); text-transform:uppercase; margin-bottom:12px; }
+  .lbl { font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; color:var(--mute); margin-bottom:12px; }
   .block { margin-bottom:24px; }
   .tiles { display:flex; gap:14px; flex-wrap:wrap; }
   .modes { display:flex; gap:12px; max-width:460px; }
@@ -32,7 +32,7 @@
       return (
         <>
           <div className="block">
-            <div className="lbl">House Mode</div>
+            <div className="lbl">House mode</div>
             <div className="modes">
               {[["Day","sun"],["Bedtime","moon-star"],["Night","moon"],["Away","door-open"]].map(([m,ic]) => (
                 <ModeButton key={m} mode={m} active={mode===m} icon={<Icon n={ic} />} onSelect={()=>setMode(m)} />
@@ -40,9 +40,9 @@
             </div>
           </div>
           <div className="block">
-            <div className="lbl">Entity Tiles</div>
+            <div className="lbl">Entity tiles</div>
             <div className="tiles">
-              <EntityTile name="Living Room" state={lr?"On · 60%":"Off"} on={lr} icon={<Icon n="lamp" />} onToggle={()=>setLr(!lr)} />
+              <EntityTile name="Living room" state={lr?"On · 60%":"Off"} on={lr} icon={<Icon n="lamp" />} onToggle={()=>setLr(!lr)} />
               <EntityTile name="Kitchen" state="Off" on={false} icon={<Icon n="cooking-pot" />} />
               <EntityTile name="Occupancy" state="Occupied" on icon={<Icon n="radar" />} />
               <EntityTile name="Laundry" state="unavailable" unavailable icon={<Icon n="washing-machine" />} />

@@ -1,5 +1,5 @@
 /* ============================================
- *  StrixMCS · The Order of the Strix
+ *  StrixMCS Labs · The Order of the Strix
  *  file: tokens/colors.css
  *  Three colors, held apart. No pastels, ever.
  * ============================================ */
@@ -22,7 +22,7 @@
   --oxblood-hi:   #6E0808;   /* lifted oxblood — borders, active edges, hover */
   --oxblood-wash: rgba(74, 4, 4, 0.10);  /* accent field wash */
 
-  --gold:         #BCA687;   /* ceremonial accents only */
+  --gold:         #BCA687;   /* the motto + the front of formal things only */
   --gold-hi:      #CAB291;   /* lifted gold */
   --gold-wash:    rgba(188, 166, 135, 0.08);
 
@@ -49,18 +49,17 @@
   --ceremonial:      var(--gold);
   --ceremonial-hi:   var(--gold-hi);
 
-  /* ---- Status (used sparingly, in dashboards) ---- */
-  --ok:      #6E9E7E;   /* muted sage — "nominal" */
-  --warn:    var(--gold);
+  /* ---- Status — no status colors; neutral or accent with a dot ---- */
+  --warn:    var(--white);
   --alert:   var(--oxblood-hi);
 
   /* ---- Labs applications (native apps only — never pages or marks) ---- */
-  --app-oxblood:      #650F20;   /* light-mode accent; 12.8:1 on white */
-  --app-wine-text:    #D37181;   /* dark-mode accent text; 4.5:1 or better */
-  --app-wine-art:     #8F3040;   /* artwork gradient start */
-  --app-art-gradient: linear-gradient(135deg, #8F3040, #650F20); /* @kind other */ /* book/cover artwork only */
+  --labs-oxblood:      #650F20;   /* light-mode accent; 12.8:1 on white */
+  --labs-wine-text:    #D37181;   /* dark-mode accent text; 4.5:1 or better */
+  --labs-wine-art:     #8F3040;   /* artwork gradient start */
+  --labs-art-gradient: linear-gradient(135deg, #8F3040, #650F20); /* @kind other */ /* book/cover artwork only */
 
   /* ---- Live-state tints for dashboards (light on / off) ---- */
-  --state-on:   var(--gold);
+  --state-on:   var(--white);
   --state-off:  var(--mute);
 }

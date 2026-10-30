@@ -1,6 +1,6 @@
 # SectionHeader
 
-A numbered section opener in the guidelines register: gold section number, white mono title, optional sans lede, and a hairline rule.
+A numbered section opener in the guidelines register: mute section number, white mono title, optional sans lede, and a hairline rule.
 
 ```jsx
 <SectionHeader number="02 — Color" title="Three colors, held apart"
