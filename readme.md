@@ -25,12 +25,16 @@ ship. Lean into the age; refuse the costume.
   Order design system — including the StrixMCS Labs imprint, the Labs
   application colors, and the whole-mark rule. When anything disagrees with
   this system, this system wins.
+- **The standard going forward.** This repository is the final design and
+  branding specification for all work of The Order of the Strix, StrixMCS and
+  StrixMCS Labs. It replaces `StrixMCS-Branding` and `StrixHA` as the design and
+  branding standard.
 - **Assets:** the seal (owl-over-book) at 256/512/1024, the transparent
   owl mark, and the full IBM Plex Mono + IBM Plex Sans families (self-hosted in
-  `fonts/`).
+  `fonts/`, under the SIL Open Font License; see `fonts/OFL.txt`).
 
 The marks are **proprietary** to StrixMCS. A public repository makes them
-viewable; it does not grant a license to reuse them.
+viewable; it does not grant a license to reuse them. See `NOTICE`.
 
 ---
 
@@ -233,13 +237,14 @@ tokens/
   typography.css        Families, weights, scale, tracking
   spacing.css           4px grid, radii, borders, layout
   effects.css           Rings, glows, motion, focus
-fonts/                  IBM Plex Mono + Sans .ttf files
+fonts/                  IBM Plex Mono + Sans .ttf files, OFL.txt
 assets/                 The seal (256/512/1024 + full), transparent owl
 guidelines/             Foundation @dsCard specimens (Colors, Type, Spacing, Brand)
 components/             core/ · forms/ · brand/ · dashboard/
 templates/              order-document/ · order-title/ · order-deck/
 readme.md               This file
 SKILL.md                Agent-Skills-compatible entry point
+NOTICE                  Rights in the marks and the fonts
 ```
 
 ---
