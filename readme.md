@@ -230,6 +230,7 @@ tiles and house-mode buttons).
 ## Root index / manifest
 
 ```
+index.html              The public site: thatosxguy.github.io/StrixMCS-Design
 styles.css              Global entry — @import list only (link THIS)
 tokens/
   fonts.css             @font-face — IBM Plex Mono + Sans (self-hosted)

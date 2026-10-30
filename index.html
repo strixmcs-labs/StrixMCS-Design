@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!-- ============================================
+     StrixMCS Labs · The Order of the Strix
+     file: index.html  (public specification site)
+     author: Dr. Matt Booth <matt@strixmcs.com>
+     Scientia · Societas · Ascensus
+     ============================================ -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StrixMCS Design</title>
+<meta name="description" content="The final design and branding standard of The Order of the Strix, for StrixMCS and StrixMCS Labs.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="StrixMCS Design">
+<meta property="og:description" content="The final design and branding standard of The Order of the Strix, for StrixMCS and StrixMCS Labs.">
+<meta property="og:image" content="https://thatosxguy.github.io/StrixMCS-Design/assets/StrixMCS-seal-1024.png">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { background: var(--bg); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text-body); font: var(--fw-regular) var(--fs-body-lg)/var(--lh-body) var(--font-body); }
+  img { display: block; max-width: 100%; }
+  a { color: var(--white); text-decoration: underline; text-decoration-color: var(--oxblood-hi); text-underline-offset: 3px; transition: text-decoration-color var(--dur) var(--ease-standard); }
+  a:hover { text-decoration-color: var(--white); }
+  a:focus-visible, iframe:focus-visible { outline: none; border-radius: var(--radius-sm); box-shadow: var(--focus-ring); }
+  code { font-family: var(--font-code); font-size: 0.9em; color: var(--white-2); overflow-wrap: anywhere; }
+
+  .wrap { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--gutter); }
+  .skip { position: absolute; left: -9999px; top: 8px; background: var(--near); padding: 8px 12px; font-family: var(--font-mono); font-size: var(--fs-label); }
+  .skip:focus { left: 8px; }
+
+  /* Masthead: the seal alone, surrounded by dark */
+  .masthead { padding-top: var(--space-24); padding-bottom: var(--space-20); }
+  .masthead img { width: 240px; height: 240px; margin: 0 0 var(--space-16); }
+  .imprint { font-family: var(--font-mono); font-size: var(--fs-label); color: var(--white-2); }
+  h1 { font: var(--fw-semibold) var(--fs-mega)/var(--lh-tight) var(--font-display); letter-spacing: var(--ls-tight); color: var(--text-display); margin: var(--space-4) 0 var(--space-6); display: flex; flex-wrap: wrap; column-gap: 0.2em; }
+  h1 span { font-weight: var(--fw-light); color: var(--white-2); }
+  .lede { max-width: var(--measure); margin: 0; font-size: var(--fs-h4); color: var(--white-2); }
+  .byline { margin: var(--space-6) 0 0; font-family: var(--font-mono); font-size: var(--fs-label); color: var(--white); }
+
+  /* Contents */
+  .toc { border-top: var(--border-hairline); border-bottom: var(--border-hairline); }
+  .toc ul { list-style: none; margin: 0; padding: var(--space-4) 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); font-family: var(--font-mono); font-size: var(--fs-label); }
+  .toc a { color: var(--read); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color var(--dur) var(--ease-standard); }
+  .toc a:hover { border-bottom-color: var(--oxblood-hi); }
+
+  /* Sections */
+  section { padding: var(--space-20) 0 0; scroll-margin-top: var(--space-4); }
+  .num { font-family: var(--font-mono); font-size: var(--fs-crest); letter-spacing: var(--ls-eyebrow); color: var(--mute); margin: 0 0 var(--space-3); }
+  h2 { font: var(--fw-semibold) var(--fs-h1)/var(--lh-tight) var(--font-display); color: var(--text-heading); margin: 0 0 var(--space-5); padding-left: var(--space-4); border-left: var(--border-accent-l); }
+  h3 { font: var(--fw-medium) var(--fs-h4)/var(--lh-snug) var(--font-display); color: var(--text-heading); margin: var(--space-10) 0 var(--space-3); }
+  section p { max-width: var(--measure); margin: 0 0 var(--space-4); }
+  .rules { max-width: var(--measure); margin: 0 0 var(--space-6); padding: 0; list-style: none; }
+  .rules li { padding: var(--space-3) 0; border-top: var(--border-hairline); }
+  .rules li:last-child { border-bottom: var(--border-hairline); }
+  .rules b { font-family: var(--font-mono); font-weight: var(--fw-medium); font-size: 0.94em; color: var(--white); }
+
+  /* Specimens: the system's own cards, rendered live */
+  .spec { margin: var(--space-6) 0 var(--space-10); max-width: 702px; }
+  .frame { border: var(--border-hairline); border-radius: var(--radius); overflow: hidden; background: var(--black); transition: border-color var(--dur) var(--ease-standard); }
+  .spec:hover .frame { border-color: var(--oxblood-hi); }
+  .fit { position: relative; overflow: hidden; }
+  .fit iframe { display: block; width: 700px; border: 0; background: var(--black); transform-origin: 0 0; }
+  figcaption { margin-top: var(--space-2); font-size: var(--fs-body-sm); line-height: var(--lh-snug); color: var(--mute); }
+  figcaption b { font-family: var(--font-mono); font-weight: var(--fw-medium); color: var(--white-2); }
+
+  /* Templates */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin: var(--space-6) 0; }
+  .card { display: block; padding: var(--space-5); background: var(--surface-card); border: var(--border-hairline); border-radius: var(--radius); text-decoration: none; transition: border-color var(--dur) var(--ease-standard); }
+  .card:hover { border-color: var(--oxblood-hi); }
+  .card b { display: block; font-family: var(--font-mono); font-weight: var(--fw-medium); color: var(--white); margin-bottom: var(--space-2); }
+  .card span { display: block; font-size: var(--fs-body-sm); line-height: 1.5; color: var(--read); }
+
+  pre { margin: var(--space-4) 0 var(--space-6); padding: var(--space-4); max-width: 100%; overflow-x: auto; background: var(--surface-code); border: var(--border-hairline); border-left: var(--border-accent-l); border-radius: var(--radius); font: var(--fs-label)/var(--lh-body) var(--font-code); color: var(--white-2); }
+  pre code { font-size: inherit; overflow-wrap: normal; }
+
+  /* Footer: the richer, outward register */
+  footer { margin-top: var(--space-24); padding: var(--space-16) 0 var(--space-20); border-top: var(--border-hairline); }
+  .motto { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: var(--ls-motto); color: var(--gold); margin: 0 0 var(--space-2); }
+  .gloss { font-family: var(--font-mono); font-size: var(--fs-label); color: var(--read); margin: 0 0 var(--space-6); }
+  .gloss a { color: var(--read); }
+  .foot-by { font-family: var(--font-mono); font-size: var(--fs-label); color: var(--white); margin: 0 0 var(--space-6); }
+  .legal { max-width: var(--measure); font-size: var(--fs-caption); line-height: 1.5; color: var(--mute); margin: 0; }
+  .legal a { color: var(--read); }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 0 var(--space-4); }
+    .masthead { padding-top: var(--space-16); padding-bottom: var(--space-12); }
+    .masthead img { width: 180px; height: 180px; margin: 0 0 var(--space-10); }
+    h1 { font-size: var(--fs-display); }
+    h2 { font-size: var(--fs-h2); }
+    .lede { font-size: var(--fs-body-lg); }
+    section { padding-top: var(--space-16); }
+    .cards { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#authority">Skip to the standard</a>
+
+<header class="wrap masthead">
+  <img src="assets/StrixMCS-seal-512.png" alt="The StrixMCS seal: a white line-art owl perched on an open book, on absolute black" width="240" height="240">
+  <div class="imprint">StrixMCS Labs · The Order of the Strix</div>
+  <h1>StrixMCS<span>Design</span></h1>
+  <p class="lede">The final design and branding standard of The Order of the Strix, for StrixMCS and StrixMCS Labs. Everything issued under the name reads as one hand.</p>
+  <p class="byline">StrixMCS Labs · Dr. Matt Booth</p>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <div class="wrap">
+    <ul>
+      <li><a href="#authority">Authority</a></li>
+      <li><a href="#entities">Entities</a></li>
+      <li><a href="#seal">The seal</a></li>
+      <li><a href="#voice">Voice</a></li>
+      <li><a href="#color">Color</a></li>
+      <li><a href="#type">Type</a></li>
+      <li><a href="#space">Space</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#templates">Templates</a></li>
+      <li><a href="#use">Use</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="authority">
+    <p class="num">01</p>
+    <h2>Authority</h2>
+    <p>This system is the source of truth. When anything disagrees with it, this system wins. It replaces StrixMCS-Branding and StrixHA as the design and branding standard.</p>
+    <p>The conceit is an ancient posture and current execution: a centuries-old seal rendered in clean modern monospace. Lean into the age; refuse the costume. The standard applies whether or not anyone else will see the artifact.</p>
+  </section>
+
+  <section id="entities">
+    <p class="num">02</p>
+    <h2>Entities</h2>
+    <p>The Order of the Strix is the umbrella: the society, its seal, motto and ceremony. StrixMCS is the house, and what runs at home stays there. StrixMCS Labs is the press, and what leaves the house is published there.</p>
+    <figure class="spec" data-h="520"><div class="frame"><div class="fit"><iframe src="guidelines/brand-entities.html" title="Specimen: the two entities" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>The two entities.</b> The Order above; StrixMCS keeps the house, Labs publishes the work. <a href="guidelines/brand-entities.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="440"><div class="frame"><div class="fit"><iframe src="guidelines/brand-header.html" title="Specimen: document and config header" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Document and config header.</b> The fixed anchor, one per entity. <a href="guidelines/brand-header.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="300"><div class="frame"><div class="fit"><iframe src="guidelines/brand-naming.html" title="Specimen: the Strix names" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>The Strix names.</b> Drop the space; capitalize the next word. <a href="guidelines/brand-naming.html">Open</a></figcaption></figure>
+  </section>
+
+  <section id="seal">
+    <p class="num">03</p>
+    <h2>The seal</h2>
+    <p>One mark: the owl perched on the open book, white line-art on absolute black. It is both the working mark and the regalia. StrixMCS Labs carries the same mark, whole; the lockup and the byline mark Labs work.</p>
+    <ul class="rules">
+      <li><b>Keep it intact.</b> Never crop, separate, recolor, rotate, glow or bevel it. Never use the owl head alone.</li>
+      <li><b>Place it on black.</b> Absolute black only, with clear space on all sides equal to the owl-head height.</li>
+      <li><b>Give it size.</b> Do not shrink it to a cramped favicon.</li>
+    </ul>
+    <figure class="spec" data-h="340"><div class="frame"><div class="fit"><iframe src="guidelines/brand-seal.html" title="Specimen: the seal" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>The seal.</b> The void is the frame. <a href="guidelines/brand-seal.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="200"><div class="frame"><div class="fit"><iframe src="guidelines/brand-wordmark.html" title="Specimen: the wordmark" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>The wordmark.</b> Capital S, lowercase, MCS in capitals. Fixed in every context. <a href="guidelines/brand-wordmark.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="300"><div class="frame"><div class="fit"><iframe src="guidelines/brand-labs.html" title="Specimen: the StrixMCS Labs lockup" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>The Labs lockup.</b> Same mark; StrixMCS 600 white, Labs 300 <code>#CFCFCF</code>, tightened space. <a href="guidelines/brand-labs.html">Open</a></figcaption></figure>
+    <p>Files: <a href="assets/StrixMCS-seal-256.png">256</a>, <a href="assets/StrixMCS-seal-512.png">512</a>, <a href="assets/StrixMCS-seal-1024.png">1024</a>, <a href="assets/StrixMCS-seal.png">full resolution</a> and the <a href="assets/StrixMCS-owl-transparent.png">transparent owl</a>.</p>
+  </section>
+
+  <section id="voice">
+    <p class="num">04</p>
+    <h2>Voice</h2>
+    <p>Serious, precise, service-oriented and documentation-minded. Plain verbs over jargon. Dry wit is allowed where it never costs clarity.</p>
+    <ul class="rules">
+      <li><b>Normal case everywhere.</b> The Order does not shout.</li>
+      <li><b>Third person or imperative.</b> It documents systems. It does not address the reader.</li>
+      <li><b>No emoji.</b> Ever.</li>
+      <li><b>Credit.</b> Work built on another project names that project and its authors directly beneath the byline, and never implies endorsement.</li>
+    </ul>
+    <figure class="spec" data-h="240"><div class="frame"><div class="fit"><iframe src="guidelines/brand-voice.html" title="Specimen: voice" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Voice.</b> How it reads. <a href="guidelines/brand-voice.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="290"><div class="frame"><div class="fit"><iframe src="guidelines/brand-byline.html" title="Specimen: the byline" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>The byline.</b> Anything authored bears a byline; the doctoral title is not dropped. <a href="guidelines/brand-byline.html">Open</a></figcaption></figure>
+  </section>
+
+  <section id="color">
+    <p class="num">05</p>
+    <h2>Color</h2>
+    <p>The field is black, everywhere. Three colors are held apart, each with exactly one job. No pastels, no gradients, no imagery and no texture.</p>
+    <figure class="spec" data-h="180"><div class="frame"><div class="fit"><iframe src="guidelines/colors-field.html" title="Specimen: field and surfaces" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Field and surfaces.</b> Black is the field; near-black raises panels and code. <a href="guidelines/colors-field.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="180"><div class="frame"><div class="fit"><iframe src="guidelines/colors-text.html" title="Specimen: text colors" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Text.</b> All text is white on black, with zero warmth. <a href="guidelines/colors-text.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="200"><div class="frame"><div class="fit"><iframe src="guidelines/colors-oxblood.html" title="Specimen: oxblood" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Oxblood.</b> Structure, not language: borders, rules and active edges, never body text. <a href="guidelines/colors-oxblood.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="200"><div class="frame"><div class="fit"><iframe src="guidelines/colors-gold.html" title="Specimen: ceremonial gold" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Ceremonial gold.</b> The rarest: the motto and the front of formal things, never ordinary UI. <a href="guidelines/colors-gold.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="230"><div class="frame"><div class="fit"><iframe src="guidelines/colors-labs-app.html" title="Specimen: Labs application colors" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Labs applications.</b> Native apps only: follow system appearance, with one accent tuned per mode. <a href="guidelines/colors-labs-app.html">Open</a></figcaption></figure>
+  </section>
+
+  <section id="type">
+    <p class="num">06</p>
+    <h2>Type</h2>
+    <p>Mono leads. IBM Plex Mono carries titles, labels, the wordmark, the motto and code. IBM Plex Sans carries running prose at 15–16px on 1.6 leading. Weight and size carry hierarchy; bold is never decoration.</p>
+    <figure class="spec" data-h="200"><div class="frame"><div class="fit"><iframe src="guidelines/type-display.html" title="Specimen: display type" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Display.</b> The voice of the record. <a href="guidelines/type-display.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="210"><div class="frame"><div class="fit"><iframe src="guidelines/type-body.html" title="Specimen: body type" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Body.</b> IBM Plex Sans for anything read at length. <a href="guidelines/type-body.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="180"><div class="frame"><div class="fit"><iframe src="guidelines/type-labels.html" title="Specimen: labels and eyebrows" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Labels and eyebrows.</b> Mono with wide tracking, for crest lines, section numbers and config labels. <a href="guidelines/type-labels.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="300"><div class="frame"><div class="fit"><iframe src="guidelines/type-scale.html" title="Specimen: type scale" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Type scale.</b> Mono display steps to the sans body baseline. <a href="guidelines/type-scale.html">Open</a></figcaption></figure>
+  </section>
+
+  <section id="space">
+    <p class="num">07</p>
+    <h2>Space</h2>
+    <p>A quiet 4px grid with generous margins. Depth comes from the hairline ring, not the drop shadow. Motion is measured, with no bounce: the Order does not spring.</p>
+    <figure class="spec" data-h="180"><div class="frame"><div class="fit"><iframe src="guidelines/spacing-scale.html" title="Specimen: spacing scale" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Spacing scale.</b> 4px base. <a href="guidelines/spacing-scale.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="180"><div class="frame"><div class="fit"><iframe src="guidelines/spacing-radii.html" title="Specimen: radii and borders" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Radii and borders.</b> Restrained corners; hairline rules over shadow. <a href="guidelines/spacing-radii.html">Open</a></figcaption></figure>
+  </section>
+
+  <section id="components">
+    <p class="num">08</p>
+    <h2>Components</h2>
+    <p>Reusable primitives, grouped by concern. Each has a <code>.d.ts</code> contract and a <code>.prompt.md</code> usage note. The specimens below render the components live.</p>
+    <figure class="spec" data-h="460"><div class="frame"><div class="fit"><iframe src="components/brand/brand.card.html" title="Specimen: brand components" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Brand.</b> Seal, Wordmark, Motto, SectionHeader, Byline. <a href="components/brand/brand.card.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="420"><div class="frame"><div class="fit"><iframe src="components/core/core.card.html" title="Specimen: core components" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Core.</b> Button, Card, Badge, Tag. <a href="components/core/core.card.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="300"><div class="frame"><div class="fit"><iframe src="components/forms/forms.card.html" title="Specimen: form components" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Forms.</b> Switch, Input. <a href="components/forms/forms.card.html">Open</a></figcaption></figure>
+    <figure class="spec" data-h="340"><div class="frame"><div class="fit"><iframe src="components/dashboard/dashboard.card.html" title="Specimen: dashboard components" loading="lazy" scrolling="no"></iframe></div></div><figcaption><b>Dashboard.</b> EntityTile, ModeButton. <a href="components/dashboard/dashboard.card.html">Open</a></figcaption></figure>
+  </section>
+
+  <section id="templates">
+    <p class="num">09</p>
+    <h2>Templates</h2>
+    <p>Starting points for consuming projects. <code>entity="order"</code> or <code>entity="labs"</code> sets header, lockup, byline and footer together.</p>
+    <div class="cards">
+      <a class="card" href="templates/order-document/OrderDocument.dc.html"><b>Order Document</b><span>A phase-gated document: config header, numbered sections, byline and motto footer. Printable.</span></a>
+      <a class="card" href="templates/order-title/OrderTitle.dc.html"><b>Order Title Screen</b><span>The ceremonial register: seal on black, wordmark, title and the gold motto.</span></a>
+      <a class="card" href="templates/order-deck/OrderDeck.dc.html"><b>Order Deck</b><span>Title, section divider, content, big-stat and closing slides. Arrow keys navigate.</span></a>
+    </div>
+  </section>
+
+  <section id="use">
+    <p class="num">10</p>
+    <h2>Use</h2>
+    <p>Source: <a href="https://github.com/strixmcs-labs/StrixMCS-Design">strixmcs-labs/StrixMCS-Design</a>. Clone the repository and link <code>styles.css</code>, which imports the token and font-face files. Components mount from the bundled window namespace.</p>
+<pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;script src="_ds_bundle.js"&gt;&lt;/script&gt;
+
+const { Seal, Wordmark, Motto } = window.StrixMCSOrderDesignSystem_72a56f;</code></pre>
+    <p>The full specification is in <a href="https://github.com/strixmcs-labs/StrixMCS-Design/blob/main/readme.md"><code>readme.md</code></a>. Agents start at <a href="https://github.com/strixmcs-labs/StrixMCS-Design/blob/main/SKILL.md"><code>SKILL.md</code></a>.</p>
+    <p>UI icons use Lucide as a stand-in for Home Assistant's Material Design Icons, at a 1.6px line weight. Projects that need exact Home Assistant parity swap in MDI and keep the weight.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="motto">Scientia · Societas · Ascensus</p>
+    <p class="gloss">Knowledge · Society · Ascent — <a href="https://mattbooth.me">mattbooth.me</a></p>
+    <p class="foot-by">StrixMCS Labs · Dr. Matt Booth</p>
+    <p class="legal">The marks and this design system are proprietary to StrixMCS. A public page makes them viewable; it does not grant a license to reuse them. See <a href="NOTICE">NOTICE</a>. IBM Plex is by IBM Corp., under the <a href="fonts/OFL.txt">SIL Open Font License</a>.</p>
+  </div>
+</footer>
+
+<script>
+  // Fit each 700px specimen to its column, then to the height it actually renders.
+  document.querySelectorAll('.spec').forEach(function (spec) {
+    var fit = spec.querySelector('.fit');
+    var frame = spec.querySelector('iframe');
+    var height = Number(spec.dataset.h);
+
+    function layout() {
+      var scale = Math.min(1, fit.clientWidth / 700);
+      frame.style.height = height + 'px';
+      frame.style.transform = 'scale(' + scale + ')';
+      fit.style.height = Math.ceil(height * scale) + 'px';
+    }
+
+    function measure() {
+      try {
+        var doc = frame.contentDocument;
+        var measured = Math.max(doc.body.scrollHeight, doc.body.offsetHeight);
+        if (measured > 0 && measured !== height) { height = measured; layout(); }
+      } catch (e) { /* keep the declared height */ }
+    }
+
+    frame.addEventListener('load', function () {
+      measure();
+      try { new ResizeObserver(measure).observe(frame.contentDocument.body); } catch (e) { /* keep the declared height */ }
+    });
+    new ResizeObserver(layout).observe(fit);
+    layout();
+  });
+</script>
+</body>
+</html>
