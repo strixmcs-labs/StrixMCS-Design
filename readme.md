@@ -37,7 +37,7 @@ in clean modern monospace — an old institution staffed by people who ship.
 **Assets:** the seal (owl over book) at 256/512/1024 and full resolution, the
 transparent owl mark, and the full IBM Plex Mono + IBM Plex Sans families
 (self-hosted in `fonts/`). The marks are **proprietary** to StrixMCS. A public
-repository makes them viewable; it does not grant a license to reuse them.
+repository makes them viewable; it does not grant a license to reuse them. See NOTICE.
 
 ---
 
@@ -167,6 +167,14 @@ diagram carries alt text, a one-line caption and a capture date.
 44. **No emoji**, except quoted as examples of what to avoid —
     `"Supercharge your smart home today!! 🚀"`.
 
+## Documentation
+
+45. This system is the only authority. There is no separate brand document.
+46. SKILL.md describes dashboard components, not a dashboard UI kit.
+47. **Icons are Lucide** at a 1.6px line weight, standing in for MDI. Projects
+    that need exact Home Assistant parity swap in MDI and keep the weight. Icons
+    are line, never filled.
+
 ---
 
 ## Type
@@ -191,10 +199,6 @@ white line-art on absolute black. The void is the frame.
   never ~~StrixMCSLabs~~, ~~StrixLab~~, ~~Strix Labs~~, ~~STRIXMCS LABS~~.
 - Assets: `assets/StrixMCS-seal-{256,512,1024}.png`, `assets/StrixMCS-seal.png`
   (full resolution), `assets/StrixMCS-owl-transparent.png`.
-
-47. **Icons are Lucide** at a 1.6px line weight, standing in for MDI. Projects
-    that need exact Home Assistant parity swap in MDI and keep the weight. Icons
-    are line, never filled.
 
 ---
 
@@ -232,6 +236,10 @@ components/             core/ · forms/ · brand/ · dashboard/
 templates/              order-document/ · order-title/ · order-deck/
 readme.md               This file
 SKILL.md                Agent-Skills entry point
+NOTICE                  Rights in the marks and the fonts
+fonts/OFL.txt           IBM Plex license (SIL Open Font License)
+index.html              The public site
+.nojekyll               Keeps GitHub Pages from dropping underscore-prefixed files
 ```
 
 ---
